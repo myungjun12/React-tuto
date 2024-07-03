@@ -16,10 +16,35 @@ import './App.css'; /* CSS를 얻어와 아래 작성된 태그 옆에 적용 cl
 */
 import R01 from './R01_ClassComponent.js';
 import R02 from './R02_FunctionComponent.js';
+import Props1 from './R03_Prop.js';
+import Props2 from './R04_Props2.js'; 
+import Props3 from './R05_Props3.js';
+// Props의 값을 보내겠다 from 어디로? './' 여기로
 function App() {
   return (
+    /*
+    리액트는 알아서 새로고침을 주기적으로 자주 진행
+    주석 : / * * / -> 설명이나 추가 내용을 작성할 때 사용
+    { / * * / } -> 주로 코드를 주석 처리할 때 사용
+    */
     <div className="App-header">
-      <p>---------------------------</p>
+      {/* <R01/> */}
+      {/* <R02/> */}
+      <Props1 num='1' name='홍길동' age='20' score='90'/>
+      <Props1 num='2' name='홍길은' age='30' score='80'/>
+      <Props1 num='3' name='홍길금' age='40' score='70'/>
+      <h3>Props 예제 2번 사용하기</h3>
+      <Props2 name='강감찬' age='72' gender='남자'/>
+      
+      <Props3 num='5' name='김연정' age='40' gender='여자' phone='010-1111-2222'/>
+      <p>-------------------</p>
+      {/* <Props2 name='강감찬' age='72' gender='남자'/>
+
+        Props2 객체는 아래와 같은 코드로 쓰겠다.
+
+      <div className="info">
+            이름 : {name} / 나이 {age} / 성별 {gender}
+        </div> */}
       <R01/>
       <R02/>
     </div>
