@@ -19,6 +19,11 @@ import R02 from './R02_FunctionComponent.js';
 import Props1 from './R03_Prop.js';
 import Props2 from './R04_Props2.js'; 
 import Props3 from './R05_Props3.js';
+import 예제1번 from './R06_State1.js'; // '' "" 크게 상관 없음
+import 예제3번 from './R08_State3.js';
+import 예제4번 from './R09_State4.js';
+import 예제5번 from './R10_State5.js';
+import 댓글창 from './R11_State6.js';
 // Props의 값을 보내겠다 from 어디로? './' 여기로
 function App() {
   return (
@@ -30,14 +35,14 @@ function App() {
     <div className="App-header">
       {/* <R01/> */}
       {/* <R02/> */}
-      <Props1 num='1' name='홍길동' age='20' score='90'/>
+      {/* <Props1 num='1' name='홍길동' age='20' score='90'/>
       <Props1 num='2' name='홍길은' age='30' score='80'/>
       <Props1 num='3' name='홍길금' age='40' score='70'/>
       <h3>Props 예제 2번 사용하기</h3>
       <Props2 name='강감찬' age='72' gender='남자'/>
       
-      <Props3 num='5' name='김연정' age='40' gender='여자' phone='010-1111-2222'/>
-      <p>-------------------</p>
+      <Props3 num='5' name='김연정' age='40' gender='여자' phone='010-1111-2222'/> */}
+      {/* <p>-------------------</p> */}
       {/* <Props2 name='강감찬' age='72' gender='남자'/>
 
         Props2 객체는 아래와 같은 코드로 쓰겠다.
@@ -45,8 +50,16 @@ function App() {
       <div className="info">
             이름 : {name} / 나이 {age} / 성별 {gender}
         </div> */}
-      <R01/>
-      <R02/>
+      {/* <R01/>
+      <R02/> */}
+
+        {/* <예제1번 />
+        <예제3번 init="50" step="10"/>
+        <예제4번 age="40" years="1"/> */}       
+        {/* init = 처음에 시작할 숫자값 step = 증감숫자 */}
+
+        <예제5번 />
+        <댓글창 />
     </div>
   );
 }
