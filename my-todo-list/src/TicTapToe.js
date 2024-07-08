@@ -6,7 +6,7 @@ const shuffleArray = (array) => {
 
 const TicTapToe= () => {
   const [numbers, setNumbers] 
-  = useState(shuffleArray([...Array(9).keys()].map(n =1)));
+  = useState(shuffleArray([...Array(9).keys()].map(n =>n +  1)));
   const [nextNumber, setNextNumber] =useState(Number(1)); //nextNumber = 1 초기값
   const [message, setMessage] = useState([]); // message = 공백 설정  
 
