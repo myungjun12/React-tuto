@@ -7,6 +7,8 @@ import Game from './component/Game';
 import Home from './component/Home';
 import GameTwoStep from "./component/GameTwoStep";
 import TodoList from "./component/TodoList";
+import TicTapToe from './component/TicTapToe';
+import TicTapToeTwoStep from "./component/TicTapToeTwoStep";
 function App() {
   return (
     <div>
@@ -16,7 +18,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
         <Route path="/game-twoStep" element={ <GameTwoStep />} />
-        <Route path="/todoList" element={<TodoList />} />
+        <Route path="/todoList" element={<TodoList />}/>
+        <Route path="/tictaptoe" element={<TicTapToe/>}/>
+        <Route path="/ttt-twoStep" element={<TicTapToeTwoStep/>}/>
       </Routes>
     </div>
   );
