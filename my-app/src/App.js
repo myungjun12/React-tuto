@@ -33,6 +33,7 @@ import Dodgegobelin from "./component/R23_Dodgegobelin/R23_Dodgegobelin.js";
 import AxiosEX1 from "./component/R25_Axios_Ex1.js";
 import AxiosEx2 from "./component/R26_Axios_Ex2.js"
 import Fetch예제1번 from "./component/R28_Fetch_ex.js";
+import Fetch예제2번 from "./component/R29_Fetch_Ex2.js";
 
 // Props의 값을 보내겠다 from 어디로? './' 여기로
 function App() {
@@ -50,7 +51,8 @@ function App() {
       {/* <Dodgegobelin/> */}
       {/* <AxiosEX1/> */}
       {/* <AxiosEx2/> */}
-    <Fetch예제1번/>
+      {/* <Fetch예제1번/> */}
+      <Fetch예제2번/>
     </div>
   );
 }
