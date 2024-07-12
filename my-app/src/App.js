@@ -13,6 +13,7 @@ R01_ClassComponent.js R01 이라는 별칭을 사용해서 App.js 적용
 
 import Board from './component/R30_Pagination/Board.js';
 import Album from "./component/R31_PagiNationEx/Album.js";
+import Profile from "./component/R32_Profile copy.js";
 function App() {
   return (
     /*
@@ -66,7 +67,8 @@ function App() {
     {/*<Axios예제2번/>*/}
     {/*<Fetch예제2번/>*/}
     {/* <Board/> */}
-    <Album/>
+    {/* <Album/> */}
+    <Profile/>
     </div>
   );
 }

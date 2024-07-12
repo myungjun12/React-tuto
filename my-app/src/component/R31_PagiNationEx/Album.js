@@ -1,49 +1,59 @@
 import React, {useState, useEffect} from 'react';
-import Pagination from './Pagination';
 import axios from 'axios';
+import Pagination from './Pagination';
+
 const 앨범 = () => {
-    // 데이터 정보 가져오는 변수명 작성
-    const [data, setData] = useState([]);
-    // 현재페이지(맨처음 1번 페이지 설정) 새로 누른 페이지 = 현재페이지
-    const [currentPage, setCurrentPage] = useState(1);
-    // 변수명변경 페이지당게시글수 -> itemPerPage
-    const [itemPerPage] = useState(5); // 한 페이지에서 게시글 5개씩 보여줌
-    // axios 이용해서 항목 가져오기
+    //    사진들    페이지번호를 클릭할 때 들어갈 사진들   
+    const [photos ,setPhotos] = useState([]);
+    //     현재페이지(맨처음 1번 페이지 설정)    새로 누른 페이지 = 현재페이지
+    const [currentPage, setCurrentPage] = useState(1); 
+    // 한 페이지당 5개씩 사진을 보겠다 설정
+    const photosPerPage = 5;
+
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/photos')
         .then((res) => {
-            setData(res.data);
+            setPhotos(res.data);
         })
         .catch((error) => {
-            console.error("사진 데이터 가져오는데 실패했습니다.", error);
+            console.error("사진 데이터 가져오는 데 실패했습니다.", error);
         });
     },[]);
-    // 현재페이지에서 첫번째 항목과 마지막 항목, 게시글리스트 체크
-                   // 현재페이지 * 보여줄사진개수
-    const 마지막항목 = currentPage * itemPerPage; // 변수명변경 마지막항목 > lastItem
-    const 첫번째항목 = 마지막항목 - itemPerPage; // 변수명변경 첫번째항목 > firstItem
-    const 게시글리스트 = data.slice(첫번째항목,마지막항목);
-    //이동항 페이지를 클릭할 때 사용할 핸들러
-    const paginate = (페이지번호) => setCurrentPage(페이지번호);
+
+    // 페이지마다 처음가져오는 앨범 마지막에가져오는앨범 어디서부터어디까지 가져올 것인지 설정
+    const lastPhoto = currentPage * photosPerPage; //현재페이지 * 한페이지당 보여줄 사진 개수
+    const firstPhoto = lastPhoto - photosPerPage;
+    const currentPhotos = photos.slice(firstPhoto, lastPhoto);
+
+    // 페이지 변경 처리
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
-        <div className='container'>
-            <h1>사진첩</h1>
-            
-            
-                {게시글리스트.map(항목 => (
-                    <div key={항목.id} 
-                    className='list-group-item'>
-                    <img src={항목.thumbnailUrl} />
-                    </div>
-                ))}
-            
-            {/* 페이지네이션은 아래 페이지네이션 태그에서 동작 */}
-            <Pagination
-                itemPerPage={itemPerPage}
-                totalItems={data.length}
-                paginate={paginate}
-                currentPage={currentPage} />
-        </div>
+        <>
+        <h1>사진첩</h1>
+        {currentPhotos.map((photo) => (
+            <div key={photo.id}>
+                <img src={photo.thumbnailUrl} />
+            </div>
+        ))}
+        <Pagination
+            itemPerPage={photosPerPage}
+            totalItems={photos.length}
+            paginate={paginate}
+            currentPage={currentPage}
+        />
+        </>
     )
+
 }
+
 export default 앨범;
+
+
+
+
+
+
+// Album  https://jsonplaceholder.typicode.com/photos
+
+// 이용해서 한 페이지에서 이미지 5개씩 보이기 
