@@ -29,6 +29,26 @@ const TicTapToe= () => {
   //게임 상태에 따라 사용자한테 보여줄 메세지 표현
   const [message, setMessage] = useState(''); //빈공간으로 놓기
   const [isCorrect, setIsCorrect] = useState(false);
+  const [timer, setTimer] = useState(5); //초기 시간 설정
+  useEffect( () => {
+    
+    console.log("TicTapToeTwoStep 실행하면")
+    console.log("사용자 눈에 보이지 않게 자동 시작기능을 설정할 수 있음");
+    console.log("F12에서 콘솔확인")
+  }, [] );
+  
+  useEffect( () => {
+   let countdown;
+   if( timer > 0 ){ // 남은 시간이 0보다 크다면 숫자를 점점 줄이겠다.
+    countdown = setTimeout( () => {
+      setTimer(timer - 1);
+    }, 500 );
+   } else if (timer === 0) { //남은 시간이 없다면
+    alert("시간초과 ! 게임이 종료되었습니다.");
+   }
+  }, );
+
+  
   const handleNumberClick = (number) => {
     //만약에 현재 사용자가 클릭해야하는 숫자와 클릭한 숫자가 서로 일치하는가?
     if (number  === nextNumber) {
