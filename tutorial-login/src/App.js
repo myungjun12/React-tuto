@@ -3,6 +3,7 @@ import LoginContext from "./components/LoginContext";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import "./App.css";
+import TodoList from "./components/TodoList";
 {/* 
       value={} => 하나의 값만 작성
       value={{}} => 두가지 이상의 값을 작성
@@ -33,7 +34,12 @@ function App() {
 
       <h1>Todo List</h1>
       {/* 로그인을 해야지 TodoList 확인 가능 */}
+     
       <Login />
+  
+      <hr/>
+      {/* 로그인이 되었을 때 로그인한 회원의 TodoList 출력 */}
+      {loginMember && (<TodoList/>)}
    </LoginContext.Provider>
   );
 }

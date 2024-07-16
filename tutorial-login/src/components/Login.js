@@ -34,14 +34,16 @@ const Login = () => {
             }
 
             // 로그인 성공 시
+            console.log("ddddd"+ map.loginMember);
             setLoginMember(map.loginMember);
+            
             //App.js 에 로그인 성공한 정보가 올라감 App.js 로그인정보를 다른 js에 전달
 
             //id,pw값 모두 지우기
             setId('');
             setPw('');
             alert('로그인 성공~!');
-        
+            setLoginMember(true);
         })
     }
 
@@ -52,6 +54,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      {!loginMember && (
       <table>
         <tbody>
           <tr>
@@ -70,15 +73,22 @@ const Login = () => {
                 <input type="password" onChange={e => setPw(e.target.value)} value={pw} />
             </td>
             <td>
-                <button onClick={로그인버튼}>로그인</button>
+                   
+
             </td>
           </tr>
         </tbody>
+        <button onClick={로그인버튼}>로그인</button>
       </table>
-      {/* loginMember 가 null이 아닌 경우 로그아웃 버튼 보이게 하기 */}
+       )} 
+
       {loginMember && (
+        <>
+        <p>{loginMember.name}님 환영합니다. 로그인에 성공하셨습니다.</p>
         <button onClick={로그아웃버튼}>로그아웃</button>
-      )}
+        </>
+        )}
+     
     </div>
   );
 };
