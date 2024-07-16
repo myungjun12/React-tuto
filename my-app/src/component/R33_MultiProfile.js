@@ -1,26 +1,23 @@
 import React, {useState} from "react";
 import "./R32_Profile.css";
 
-const 프로필 = () => {
+const 멀티프로필 = () => {
     const [선택한이미지, set선택한이미지] = useState(null);
 
     const 이미지변경하기 = (event) => {
-        const file = event.target.files[0]; //파일은 리스트 목록으로 존재 0번째부터 ~~ 있겠다.
-        // 추후 이미지 다중선택이 가능할 때 이미지 순서대로 가지고 올 것
-        // 파일은 모두 파일들이라는 전제하에 파일을 선택하기 때문에 
-        // 하나의 이미지를 선택할 때는 첫번째 자리 (index = 0)인 0번째 사진을 갖고 오겠다.
-        const imagesArray = [];
-        for (let i = 1; i <= file.length; i++){
-            const file = files[i];
-            const reader = new FileReader();
+        const file = event.target.files[0]; 
+        if(file) { 
+            const reader = new FileReader(); 
+            
             reader.onloadend = () => {
-                imagesArray.push(reader.result);
-                if(file.length == imagesArray.length) {
-                    set선택한이미지(imagesArray[i]);
-                }
+                
+                set선택한이미지(reader.result);
+                //reder.result : 파일의 내용(이미지를 컴퓨터용어로 작성된 코드를 주소값으로 변경한 데이터 주소(URL)
             };
-        reader.readAsDataURL(file);  
-        }
+            reader.readAsDataURL(file);
+            // readAsDataURL 기능 : 데이터 URL 읽기 시작 
+            //주소는 String 문자열로 표현 
+        } 
     }
     return (
         <div className="profile-container">
@@ -40,4 +37,4 @@ const 프로필 = () => {
         </div>
     )
 }
-export default 프로필;
+export default 멀티프로필;
