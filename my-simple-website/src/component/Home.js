@@ -9,10 +9,11 @@ const Home = () => {
             </header> 
         {/***** 소개 섹션으로 part1과 part2가 존재 *****/}
             {/* part1 : 사진을 넣지 않고 소개만 작성하는 about */}
-            <section className="home-about-one">
+            
+            {/* <section className="home-about-one">
                 <h2>소개</h2>
                 <p>저는 차명준 입니다. KH정보교육원에서 FullStack 과정을 수료했습니다.</p>
-            </section>
+            </section> */} 
 
             {/* part2 : 한 row를 두 column으로 나눠서 좌측은 사진 우측은 소개 작성하는 about */}
             <section className="home-about-two">
