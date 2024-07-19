@@ -16,12 +16,13 @@ const Home = () => {
 
             {/* part2 : 한 row를 두 column으로 나눠서 좌측은 사진 우측은 소개 작성하는 about */}
             <section className="home-about-two">
+                <h2>소개</h2>
                 <div className="about-row">
                     <div className="about-image">
                     <img src="./hancom.jpg" alt="프로필 사진" />
                     </div>
                     <div className="about-text">
-                        <h2>소개</h2>
+                        
                         <p>이름       : 차명준</p>
                         <p>나이       : 31    </p>
                         <p>이메일     :       </p>
