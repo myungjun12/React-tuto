@@ -1,6 +1,6 @@
 import React, {useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import "../TicTapToe.css";
 
 const shuffleArray = (array) => {
   return array.sort(() => Math.random() - 0.5);

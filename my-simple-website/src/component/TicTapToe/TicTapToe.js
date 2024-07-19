@@ -1,6 +1,6 @@
 import React, {useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./TicTapToe.css";
+import "../TicTapToe.css";
 
 /* 
    import React, {useEffect,useState } from 'react';
@@ -42,7 +42,7 @@ const TicTapToe= () => {
    if( timer > 0 ){ // 남은 시간이 0보다 크다면 숫자를 점점 줄이겠다.
     countdown = setTimeout( () => {
       setTimer(timer - 1);
-    }, 500 );
+    }, 1000 );
    } else if (timer === 0) { //남은 시간이 없다면
     alert("시간초과 ! 게임이 종료되었습니다.");
    }

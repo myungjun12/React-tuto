@@ -18,11 +18,11 @@ const Login = () => {
        
         headers : {
         // 사용자 -> 서버에 로그인한 정보가 일치하는게 있는지 확인
-        "Content-Type" : "application/json",
+        "Content-Type" : "application/json", // 백으로 보내는형식 제이슨형태로 보낸다.
         // 서버 -> 사용자 한테 사용자가 작성한 정보가 존재하는지에 대한 존재여부 전달
-        "Accept" : "application/json"},
+        "Accept" : "application/json"}, // 받는 형식 맵 형식으로 받기위해서 Accept를 사용한다.
         body : JSON.stringify({id : id, pw : pw}) //본문으로 id pw 작성된 내용 전달
-        })
+        })    // 객체를 스트링타입으로 
         .then(response => response.json())
         .then(map => { 
             console.log(map);

@@ -62,3 +62,45 @@ nav ul li a:hover{
   background-color: #575757;
   border-radius: 4px;
 }
+
+/***** Footer *****/
+/* 
+   -CSS Color Tip-
+   1~1111 완전 검정계열 
+   2~2222 살짝 검정
+   3~3333 차콜
+   fff ~ fffff 화이트 계열
+*/
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0; /* footer 바텀 고정 */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

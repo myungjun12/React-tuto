@@ -1,16 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Game from "./component/Game";
+import Game from "./component/Game.js";
 import { Routes, Route } from "react-router-dom";
-import Home from "./component/Home";
-import NavBar from "./component/NavBar";
-import Header from "./component/Header";
-import GameTwoStep from "./component/GameTwoStep";
-import TodoList from "./component/TodoList";
-import TicTapToe from "./component/TicTapToe";
-import TicTapToeTwoStep from "./component/TicTapToeTwoStep";
-import TypingTest from "./component/TypingTest";
-import MovieRating from "./component/Movie/MovieGrade";
+import Home from "./component/Home.js";
+import NavBar from "./component/Layout/NavBar.js";
+import Header from "./component/Layout/Header.js";
+// ERROR in ./src/App.js 10:0-40 App.js에서 오류 발생
+import GameTwoStep from "./component/GameTwoStep.js";
+import TodoList from "./component/TodoList.js";
+import TicTapToe from "./component/TicTapToe/TicTapToe.js";
+import TicTapToeTwoStep from "./component/TicTapToe/TicTapToeTwoStep.js";
+import TypingTest from "./component/TypingTest.js";
+import MovieRating from "./component/Movie/MovieGrade.js";
+import Footer from "./component/Layout/Footer.js";
 function App() {
   return (
     <div>
@@ -26,8 +27,7 @@ function App() {
         <Route path="/typingTest"   element =  {   <TypingTest  />    } />
         <Route path="/movieRate"    element =  {   <MovieRating />    } />
       </Routes>
-
-
+      <Footer/>
     </div>
   );
 }
