@@ -12,6 +12,7 @@ import TicTapToeTwoStep from "./component/TicTapToe/TicTapToeTwoStep.js";
 import TypingTest from "./component/TypingTest.js";
 import MovieRating from "./component/Movie/MovieGrade.js";
 import Footer from "./component/Layout/Footer.js";
+import Webtoon from "./component/Projects/Webtoon.js";
 function App() {
   return (
     <div>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/ttt-twoStep"  element =  {   <TicTapToeTwoStep/>} />
         <Route path="/typingTest"   element =  {   <TypingTest  />    } />
         <Route path="/movieRate"    element =  {   <MovieRating />    } />
+        <Route path="/webToon"      element =  {   <Webtoon     />    } />
       </Routes>
       <Footer/>
     </div>

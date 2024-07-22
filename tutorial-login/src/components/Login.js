@@ -27,13 +27,13 @@ const Login = () => {
         .then(map => { 
             console.log(map);
 
-            // 로그인 실패 시
+            // 로그인 실패 시 (가입된 정보가 없을시)
             if(map.loginMember === null) {
                 alert('아이디 또는 비밀번호가 일치하지 않습니다.');
                 return;
             }
 
-            // 로그인 성공 시
+            // 로그인 성공 시 map.loginMember 값이 존재하는지 log 확인하고 setLoginMember에 넣어줌
             console.log("ddddd"+ map.loginMember);
             setLoginMember(map.loginMember);
             
@@ -51,6 +51,8 @@ const Login = () => {
     const 로그아웃버튼 = () => {
         setLoginMember(null);
     }
+
+
 
   return (
     <div className="login-container">
@@ -81,7 +83,7 @@ const Login = () => {
         <button onClick={로그인버튼}>로그인</button>
       </table>
        )} 
-
+      {/* 로그인 성공했을 때 기본 이미지 설정을 통해서 update delete 넣을 수도 있을 것 같네 */}
       {loginMember && (
         <>
         <p>{loginMember.name}님 환영합니다. 로그인에 성공하셨습니다.</p>
